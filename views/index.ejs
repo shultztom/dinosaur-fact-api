@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>
+    <%= title _%>
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+
+</head>
+
+<body>
+  <h1>
+    <%= title _%>
+  </h1>
+  <p>Welcome to my
+    <%= title _%>
+  </p>
+  <p>The list of dinosaurs was pulled from <a href="https://www.thoughtco.com/dinosaurs-a-to-z-1093748">this article</a>.</p>
+
+  <h4>Routes</h4>
+
+  <p><a href="/dinosaurs">/dinosaurs</a></p>
+  <ul>
+    <li>Returns the entire list of dinosaurs and their description in JSON</li>
+  </ul>
+
+  <p><a href="/dinosaurs/random">/dinosaurs/random</a></p>
+  <ul>
+    <li>Returns a random dinosaur and their description in JSON</li>
+  </ul>
+
+  <p><a href="/dinosaurs/random/name">/dinosaurs/random/name</a></p>
+  <ul>
+    <li>Returns a random dinosaur name in JSON</li>
+  </ul>
+
+  <p><a href="/dinosaurs/random/description">/dinosaurs/random/description</a></p>
+  <ul>
+    <li>Returns a random dinosaur description in JSON</li>
+  </ul>
+</body>
+
+</html>

@@ -4,11 +4,13 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const cors = require("cors");
+const helmet = require("helmet");
 
 var indexRouter = require("./routes/index");
 
 var app = express();
 
+app.use(helmet());
 app.use(cors());
 
 // view engine setup

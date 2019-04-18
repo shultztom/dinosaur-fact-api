@@ -43,7 +43,7 @@ node('linux'){
                 }
 
                 sshPut remote: remote, from:".", into: "/home/tks23/tmp/"
-                sshCommand remote: remote, command: "npm i"
+                sshCommand remote: remote, command: "cd /home/tks23/tmp && npm i"
                 sshCommand remote: remote, command: "rm -rf /home/tks23/projects/dinosaur-fact-api/*"
                 sshCommand remote: remote, command: "cp -a /home/tks23/tmp/${workspaceFolder}/* /home/tks23/projects/dinosaur-fact-api/"
                 sshCommand remote: remote, command: "cd /home/tks23/projects/dinosaur-fact-api/ && pm2 reload dino-facts-api"

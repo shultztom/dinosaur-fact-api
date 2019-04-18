@@ -51,10 +51,5 @@ node('linux'){
                 echo 'Not deploying since not master branch'
             }
         }
-   }
-
-
-   stage('Clean Up'){
-       cleanUpApplication.cleanUp()
-   }    
+   } 
 }

@@ -43,10 +43,10 @@ node('linux'){
                 }
 
                 sshPut remote: remote, from:".", into: "/home/tks23/tmp/"
-                sshCommand remote: remote, command: "cd /home/tks23/tmp/${workspaceFolder} && npm i"
+                sshCommand remote: remote, command: "cd /home/tks23/tmp/${workspaceFolder} && . ~/.nvm/nvm.sh && nvm install && nvm use && npm i yarn -g && yarn install"
                 sshCommand remote: remote, command: "rm -rf /home/tks23/projects/dinosaur-fact-api/*"
                 sshCommand remote: remote, command: "cp -a /home/tks23/tmp/${workspaceFolder}/* /home/tks23/projects/dinosaur-fact-api/"
-                sshCommand remote: remote, command: "cd /home/tks23/projects/dinosaur-fact-api/ && pm2 reload dino-facts-api"
+                sshCommand remote: remote, command: "cd /home/tks23/projects/dinosaur-fact-api/ && pm2 reload dino-facts"
                 sshCommand remote: remote, command: "rm -rf /home/tks23/tmp/${workspaceFolder}"
             }else{
                 echo 'Not deploying since not master branch'

@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 node('linux'){
-    def node = tool name: 'Node11.13', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
+    def node = tool name: 'Node12.13', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
     env.PATH = "${node}/bin:${env.PATH}"
     def npmGlobalPath = sh(script: 'npm bin -g', returnStdout: true).trim()
     env.PATH = "${npmGlobalPath}:${env.PATH}"

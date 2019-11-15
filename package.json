@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "test": "nodemon ./bin/www",
-    "build": "oc start-build dinosaur-fact-api"
+    "build": "oc start-build dinosaur-fact-api --follow"
   },
   "dependencies": {
     "cors": "^2.8.5",

@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "test": "nodemon ./bin/www"
+    "test": "nodemon ./bin/www",
+    "build": "oc start-build dinosaur-fact-api"
   },
   "dependencies": {
-    "cookie-parser": "^1.4.4",
     "cors": "^2.8.5",
     "debug": "^4.1.1",
     "ejs": "^2.6.2",

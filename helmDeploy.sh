@@ -1,0 +1,1 @@
+helm upgrade --install dino-facts-api shultzlab/http-deploy  -f .helm/deploy/values.yaml

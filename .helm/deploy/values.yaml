@@ -1,12 +1,12 @@
 replicaCount: 1
 
 image:
-  repository: shultzlab.jfrog.io/default-docker-virtual/shultztom/dinosaur-api
+  repository: us-central1-docker.pkg.dev/shultzlab/docker-gcp/dinosaur-api
   pullPolicy: Always
   tag: "latest"
 
 imagePullSecrets: 
-  - name: artifactory
+  - name: gcp-registry
 nameOverride: ""
 fullnameOverride: ""
 

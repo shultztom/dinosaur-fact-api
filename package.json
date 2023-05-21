@@ -1,19 +1,21 @@
 {
   "name": "dinosaur-api",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "private": true,
   "scripts": {
+    "start:prod": "node -r newrelic ./bin/www",
     "start": "node ./bin/www",
-    "test": "nodemon ./bin/www",
+    "start:dev": "nodemon ./bin/www",
     "build": "oc start-build dinosaur-fact-api --follow"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "debug": "^4.1.1",
-    "ejs": "^2.6.2",
+    "ejs": "^3.1.9",
     "express": "^4.17.1",
     "helmet": "^3.21.2",
     "http-errors": "^1.7.2",
-    "morgan": "^1.9.1"
+    "morgan": "^1.9.1",
+    "newrelic": "^10.1.1"
   }
 }

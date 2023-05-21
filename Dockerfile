@@ -1,4 +1,4 @@
-FROM node:12.13.0-alpine
+FROM node:18.16.0-alpine
 
 # Create app directory
 WORKDIR /app
@@ -15,4 +15,4 @@ COPY . .
 
 EXPOSE 8080
 USER node
-CMD [ "yarn", "start" ]
+CMD [ "yarn", "start:prod" ]

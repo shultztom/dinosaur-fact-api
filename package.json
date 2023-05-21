@@ -1,6 +1,6 @@
 {
   "name": "dinosaur-api",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": true,
   "scripts": {
     "start:prod": "node -r newrelic ./bin/www",
@@ -17,5 +17,8 @@
     "http-errors": "^1.7.2",
     "morgan": "^1.9.1",
     "newrelic": "^10.1.1"
+  },
+  "resolutions": {
+    "qs": "^6.7.3"
   }
 }

@@ -15,4 +15,4 @@ COPY . .
 
 EXPOSE 8080
 USER node
-CMD [ "yarn", "start:prod" ]
+CMD [ "yarn", "start" ]

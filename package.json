@@ -1,6 +1,6 @@
 {
   "name": "dinosaur-api",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "private": true,
   "scripts": {
     "start:prod": "node -r newrelic ./bin/www",

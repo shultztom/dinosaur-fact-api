@@ -1,6 +1,6 @@
 {
   "name": "dinosaur-api",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "private": true,
   "scripts": {
     "start:prod": "node -r newrelic ./bin/www",
@@ -9,6 +9,8 @@
     "build": "oc start-build dinosaur-fact-api --follow"
   },
   "dependencies": {
+    "@opentelemetry/api": "^1.9.0",
+    "@opentelemetry/auto-instrumentations-node": "^0.47.0",
     "cors": "^2.8.5",
     "debug": "^4.1.1",
     "ejs": "^3.1.9",

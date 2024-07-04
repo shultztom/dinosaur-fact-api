@@ -3,12 +3,33 @@ replicaCount: 1
 image:
   repository: us-central1-docker.pkg.dev/shultzlab/docker-gcp/dinosaur-api
   pullPolicy: Always
-  tag: "1.0.5"
+  tag: "1.1.0"
 
 imagePullSecrets: 
   - name: gcp-registry
 nameOverride: ""
 fullnameOverride: ""
+
+env:
+  - name: OTEL_SERVICE_NAME
+    value: "dinosaur-fact-api"
+  - name: OTEL_TRACES_EXPORTER
+    value: "otlp"
+  - name: OTEL_METRICS_EXPORTER
+    value: "otlp"
+  - name: NODE_OPTIONS
+    value: "--require @opentelemetry/auto-instrumentations-node/register"
+  - name: OTEL_EXPORTER_OTLP_PROTOCOL
+    value: "http/protobuf"
+  - name: OTEL_EXPORTER_OTLP_ENDPOINT
+    value: "https://otlp-gateway-prod-us-east-0.grafana.net/otlp"
+  - name: OTEL_EXPORTER_OTLP_HEADERS
+    valueFrom:
+      secretKeyRef:
+        name: grafana.api.secret
+        key: OTEL_EXPORTER_OTLP_HEADERS
+        optional: false
+
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -40,12 +61,15 @@ ingress:
   enabled: true
   annotations:
     kubernetes.io/ingress.class: nginx
-    cert-manager.io/cluster-issuer: letsencrypt-production
-  tls:
-    - secretName: dinosaur-facts-api-tls
-      hosts:
-        - dinosaur-facts-api.shultzlab.com
+    # cert-manager.io/cluster-issuer: letsencrypt-production
+  # tls:
+  #   - secretName: dinosaur-facts-api-tls
+  #     hosts:
+  #       - dinosaur-facts-api.internalshultzlab.com
   hosts:
+    - host: dinosaur-facts-api.internalshultzlab.com
+      paths: 
+        - name: /
     - host: dinosaur-facts-api.shultzlab.com
       paths: 
         - name: /

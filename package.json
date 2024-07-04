@@ -1,24 +1,22 @@
 {
   "name": "dinosaur-api",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
-    "start:prod": "node -r newrelic ./bin/www",
     "start": "node ./bin/www",
-    "start:dev": "nodemon ./bin/www",
-    "build": "oc start-build dinosaur-fact-api --follow"
+    "start:dev": "nodemon ./bin/www"
   },
   "dependencies": {
+    "@opentelemetry/api": "^1.9.0",
+    "@opentelemetry/auto-instrumentations-node": "^0.48.0",
     "cors": "^2.8.5",
-    "debug": "^4.1.1",
-    "ejs": "^3.1.9",
-    "express": "^4.17.1",
-    "helmet": "^3.21.2",
-    "http-errors": "^1.7.2",
-    "morgan": "^1.9.1",
-    "newrelic": "^10.1.1"
+    "debug": "^4.3.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "helmet": "^7.1.0",
+    "http-errors": "^2.0.0",
+    "morgan": "^1.10.0"
   },
   "resolutions": {
-    "qs": "^6.7.3"
   }
 }

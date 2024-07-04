@@ -1,18 +1,18 @@
-FROM node:18.16.0-alpine
+FROM node:lts-alpine
 
 # Create app directory
 WORKDIR /app
 
 # Install app dependencies
-COPY package.json yarn.lock ./
+COPY package.json package-lock.json ./
 
-RUN yarn install --production
+# RUN npm install --production
 # If you are building your code for production
-# RUN npm ci --only=production
+RUN npm ci --only=production
 
 # Bundle app source
 COPY . .
 
 EXPOSE 8080
 USER node
-CMD [ "yarn", "start" ]
+CMD [ "npm", "run", "start" ]

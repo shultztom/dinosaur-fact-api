@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "@opentelemetry/api": "^1.9.1",
-    "@opentelemetry/auto-instrumentations-node": "^0.76.0",
+    "@opentelemetry/auto-instrumentations-node": "^0.77.0",
     "cors": "^2.8.6",
     "debug": "^4.4.3",
     "ejs": "^5.0.2",

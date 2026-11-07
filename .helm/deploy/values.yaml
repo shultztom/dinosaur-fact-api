@@ -63,9 +63,9 @@ ingress:
         - path: /
 
 livenessProbe:
-  enabled: false
+  enabled: true
 readinessProbe:
-  enabled: false
+  enabled: true
 
 resources: {}
 
